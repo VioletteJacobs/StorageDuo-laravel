@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\MembreController;
+use App\Models\Membre;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $DBMembre= Membre::all();
+    return view('welcome',compact("DBMembre"));
 });
+
+Route::resource("membres", MembreController::class);
+Route::resource("genres", GenreController::class);

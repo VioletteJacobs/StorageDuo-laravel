@@ -14,7 +14,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        //
+        return view("pages.storeGenre");
     }
 
     /**
@@ -35,7 +35,10 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = New Genre;
+        $store->genre = $request->genre;
+        $store->save();
+        return redirect()->back();
     }
 
     /**
