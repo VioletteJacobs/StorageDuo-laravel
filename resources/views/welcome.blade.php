@@ -17,7 +17,7 @@
             <h5 class="card-title">{{$item->nom}}</h5>
             <p class="card-text">{{$item->age}}</p>
             <p class="card-text">{{$item->genre}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="/download-fichier/{{$item->id}}" class="btn btn-primary">Télécharger</a>
         </div>
     </div>
     @if ($loop->iteration%3 ==0)

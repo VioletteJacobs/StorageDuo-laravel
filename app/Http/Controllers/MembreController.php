@@ -93,4 +93,8 @@ class MembreController extends Controller
     {
         //
     }
+    public function download($id){
+        $down = Membre::find($id);
+        return storage::download('public/img/'.$down->src);
+    }
 }

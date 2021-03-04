@@ -20,6 +20,7 @@ Route::get('/', function () {
     $DBMembre= Membre::all();
     return view('welcome',compact("DBMembre"));
 });
+Route::get("download-fichier/{id}",[MembreController::class, "download"]);
 
 Route::resource("membres", MembreController::class);
 Route::resource("genres", GenreController::class);
